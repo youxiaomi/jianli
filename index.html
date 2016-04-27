@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>孙欲尤简历</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel='stylesheet'>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+    .wrap{
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .wrap1,.wrap2,.wrap3{
+        width: 400px;
+        /*float: left;*/
+        height: 100%;
+        position: absolute;
+        left: 400px;
+        top:0;
+        /*transform:rotateY(0deg);*/
+        /*-webkit-transform:rotateY(0deg); !* Safari and Chrome *!*/
+    }
+    .wrap1{
+        background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap1" style="transform: rotateY(0deg);">
+            <div>
+                
+            </div>
+        </div>
+        <div class="wrap2">
+            321
+        </div>
+        <div class="wrap3">
+            1222
+        </div>
+    </div>
+<script>
+    $('.wrap').css({'height':window.innerHeight})
+    var wrap1=document.querySelector('.wrap1')
+//    var set=setInterval(function () {
+//
+//        var reg=wrap1.style.transform
+//        var regExec=/[0-9]\d*/g;
+//        var deg=regExec.exec(reg)
+//        var rot=parseInt(deg)+2
+//        wrap1.style.transform='rotateY('+rot+'deg)'
+//        wrap1.style.left=wrap1.offsetLeft-2.222 +'px'
+//        if(rot==360){
+//            clearInterval(set)
+//            wrap1.style.left=0+'px'
+//            skew()
+//            return
+//        }
+//    },10)
+function skew() {
+    var i=0
+    var setSkew=setInterval(function () {
+        i--
+        wrap1.style.transform='skew(0deg,'+i+'deg)'
+        if(i==-20){
+            clearInterval(setSkew)
+        }
+    },20)
+}
+
+</script>
+</body>
+</html>
