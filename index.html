@@ -12,9 +12,12 @@
         }
     .wrap{
         width: 1200px;
-        margin: 0 auto;
         position: relative;
+        font-family:'微软雅黑';
+        margin: 0 auto;
     }
+
+    /*wrap1 style*/
     .wrap1,.wrap2,.wrap3{
         width: 400px;
         /*float: left;*/
@@ -22,57 +25,304 @@
         position: absolute;
         left: 400px;
         top:0;
+        margin: 73px auto;
+        overflow: hidden;
         /*transform:rotateY(0deg);*/
         /*-webkit-transform:rotateY(0deg); !* Safari and Chrome *!*/
     }
     .wrap1{
-        background-color: aqua;
+        background-color: #22c3aa;
     }
+    .wrap3{
+        margin-top:0;;
+    }
+    .head{
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+    }
+    .wrap1_head{
+        margin: 20px auto;
+        width: 100px;
+        height: 120px;
+        display: none;
+    }
+    .wrap1_2{
+         position: absolute;
+        left: 50%;
+        width: 200px;
+        margin-left: -100px;
+        top: 150px;
+        font-size: 25px;
+        text-shadow: 1px 2px #22c3aa,2px 4px #eef3f0;
+        color: #eef3f0;
+        text-align: center;
+    }
+    .wrap1_3{
+         position: absolute;
+         left: -300px;
+        top: 250px;
+         font-size: 20px;
+        width: 300px;
+        text-align: center;
+        color: #008a75;
+        /*color: #aee2d9;*/
+        }
+        .wrap1_4{
+            position: absolute;
+            width: 200px;
+            left: 400px;
+            top: 300px;
+            font-size: 20px;
+            color: white;
+            text-align: center;
+        }
+        .wrap1_5{
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            margin-left: -100px;
+            bottom: -66px;
+            font-size: 20px;
+            color: #aee2d9;
+            text-align: center;
+        }
+        .wrap1_2_you{
+            visibility: hidden;
+        }
+        .animateName{
+            visibility: visible;
+            display: inline-block;
+            animation: name 1.5s;
+        }
+        @keyframes name{
+            from {transform: rotate(0deg) scale(0.1,0.1)}
+            to {transform: rotate(3600deg) scale(1,1)}
+        }
+        @-webkit-keyframes name{
+            from {transform: rotate(0deg) scale(0.1,0.1)}
+            to {transform: rotate(3600deg) scale(1,1)}
+        }
+        @-webkit-keyframes name{
+            from {transform: rotate(0deg) scale(0.1,0.1)}
+            to {transform: rotate(3600deg) scale(1,1)}
+        }
+
+        /*wrap2 style*/
+        .wrap2{
+            background-color: #22c3aa;
+        }
+        .wrap2_1 h2,.wrap2_2 h2{
+            margin-top: 50px;
+            text-align: center;
+            color: azure;
+        }
+        .wrap2_1 h4,.wrap2_2 h4{
+            margin-top: 20px;
+            text-align: center;
+            color: azure;
+        }
+        .wrap2_1 p{
+            margin: 0 auto;
+            text-align: center;
+            color: #aee2d9;
+            width: 200px;
+        }
+        .wrap2_2>div{
+            text-align: center;
+        }
+        .wrap2_2 span{
+            color: lemonchiffon;
+            margin-right: 5px;
+        }
+        .wrap2_2 span:nth-child(2n){
+            color: burlywood;
+        }
+        .wrap2animate{
+            animation: wrap2 1s;
+        }
+        @keyframes wrap2{
+        0% {transform: rotate(0deg) scale(1,1)}
+        50% {transform: rotate(1440deg) scale(0.1,0.1)}
+        100% {transform: rotate(2880deg) scale(1,1)}
+        }
+        .wrap3{
+            background-color: rgba(147, 215, 255, 0.52);
+            top: -100%;
+        }
+        .wrap3 h2{
+            text-align: center;
+            margin-top: 30px;
+            color: aliceblue;
+        }
+        .wrap3 img{
+            width: 50px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .wrap3_1,.wrap3_2{
+            text-align: center;
+            margin-top: 50px;
+            color: #22c3aa;
+        }
+        .wrap3_3{
+            text-align: center;
+            margin-top: 100px;
+            color: darkcyan;
+        }
     </style>
 </head>
 <body>
     <div class="wrap">
         <div class="wrap1" style="transform: rotateY(0deg);">
-            <div>
-                12
+            <div class="wrap1_head">
+                <img src="images/head.jpg" alt="头像" class="head">
+            </div>
+            <div class="wrap1_2">
+                <h1 class="wrap1_2_x" style="display: none"><span>孙欲</span><span class="wrap1_2_you" >尤</span></h1>
+            </div>
+            <div class="wrap1_3">
+                <span>年龄:23|</span>
+                <span>学历:大专|</span>
+                <span>专业:建筑</span>
+            </div>
+            <div class="wrap1_4">
+                求职:前端岗位
+            </div>
+            <div class="wrap1_5">
+                <p>前端的道路上，默默地爬坑...</p>
             </div>
         </div>
-        <div class="wrap2">
-            321
+        <div class="wrap2" style="display: none">
+            <div class="wrap2_1" style="display: none">
+                <h2>工作经历</h2>
+                <h4>乐途汽车管家</h4>
+                <h4>2015.10-2016.3</h4>
+                <p>1、HTML,CSS3,javaScript完成数据逻辑交互制作网站页面</p>
+                <p>2、javaScript完成数据逻辑交互</p>
+                <p>3、用PHP开发简单后台系统</p>
+            </div>
+            <div class="wrap2_2" style="display: none">
+                <h2>技能</h2>
+                <h4>熟悉</h4>
+                <div><span>HTML</span><span>css</span><span>javaScript</span><span>jquery</span><span>bootstrap</span></div>
+                <h4>了解</h4>
+                <div><span>node.js</span><span>react.js</span><span>php</span><span>ES6</span></div>
+            </div>
         </div>
         <div class="wrap3">
-            1222
+            <h2>个人作品</h2>
+            <div class="wrap3_1">
+                <h3><a href="majiang/index.html" target="_blank"><img src="images/majiang.jpg">麻将计价器</a> </h3>
+                <p>react+es6+redux</p>
+                <a href="https://github.com/youxiaomi/react-majiang.git" target="_blank">github源码</a>
+            </div>
+            <div class="wrap3_2">
+                <h3><a href="lunbo/index.html" target="_blank">轮播图</a> </h3>
+                <p>记录图片位置储存数组，改变数组顺畅，重新赋值</p>
+            </div>
+            <div class="wrap3_3">
+                <h4>PHONE:18908077894</h4>
+                <h4>QQ:137585303</h4>
+            </div>
         </div>
     </div>
 <script>
-    $('.wrap').css({'height':window.innerHeight})
+    var height=window.innerHeight
+    if(height>800){
+        height=800
+    }else if(height<650){
+        height=650
+    }
+    $('.wrap').css({'height':height-146})
+    $('.wrap1_head').fadeIn('slow')
+    $('.wrap1_2_x').fadeIn('slow',function () {
+        $('.wrap1_2_you').addClass('animateName')
+        setTimeout(function () {
+            $('.wrap1_3').animate({left:'50px'},'slow')
+            $('.wrap1_4').animate({left:'100px'},'slow')
+            $('.wrap1_5').animate({bottom:height-146-360-66+'px'},'slow',function () {
+                setTimeout(function () {
+                    wrapAnimate()
+                },1000)
+            })
+        },1500)
+    })
+
     var wrap1=document.querySelector('.wrap1')
-//    var set=setInterval(function () {
-//
-//        var reg=wrap1.style.transform
-//        var regExec=/[0-9]\d*/g;
-//        var deg=regExec.exec(reg)
-//        var rot=parseInt(deg)+2
-//        wrap1.style.transform='rotateY('+rot+'deg)'
-//        wrap1.style.left=wrap1.offsetLeft-2.222 +'px'
-//        if(rot==360){
-//            clearInterval(set)
-//            wrap1.style.left=0+'px'
-//            skew()
-//            return
-//        }
-//    },10)
-function skew() {
+    function wrapAnimate() {
+    var set=setInterval(function () {
+        var reg=wrap1.style.transform
+        var regExec=/[0-9]\d*/g;
+        var deg=regExec.exec(reg)
+        var rot=parseInt(deg)+2
+        wrap1.style.transform='rotateY('+rot+'deg)'
+        wrap1.style.left=wrap1.offsetLeft-2.222 +'px'
+        if(rot==360){
+            clearInterval(set)
+            wrap1.style.left=0+'px'
+            skew(wrap1,-1)
+            return
+        }
+    },10)
+}
+function skew(name,b) {
     var i=0
     var setSkew=setInterval(function () {
-        i--
-        wrap1.style.transform='skew(0deg,'+i+'deg)'
+        i=i+b
+        name.style.transform='skew(0deg,'+i+'deg)'
         if(i==-20){
             clearInterval(setSkew)
+            wrap2Fun()
+        }
+        if(i==20){
+            clearInterval(setSkew)
+            wrap3Fun()
         }
     },20)
 }
+</script>
+<script>
+//    wrap2Fun()
+    function wrap2Fun() {
+        $('.wrap2').fadeIn('slow',function () {
+            $('.wrap2_1').fadeIn('slow',function () {
+                $('.wrap2_2').fadeIn('slow',function () {
+                    wrap2Move()
+                })
+            })
+        })
+    }
+    function wrap2Move() {
+        $('.wrap2').addClass('wrap2animate')
+        $('.wrap2').animate({left:'800px'},1000)
+        var wrap2=document.querySelector('.wrap2')
+        setTimeout(function () {
+            skew(wrap2,1)
+        },1000)
+    }
+    function wrap3Fun() {
+        $('.wrap3').animate({top:height-$('.wrap3').get(0).offsetHeight},'fast')
+        $('.wrap3').animate({top:0},'fast',function () {
+            var distance=height-$('.wrap3').get(0).offsetHeight
+            console.log(distance)
+            wrap3Move()
+            function wrap3Move() {
+                distance=distance-40
+                console.log(distance)
+                if(distance>0){
+                    $('.wrap3').animate({top:distance})
+                    $('.wrap3').animate({top:0})
+                    wrap3Move()
+                }else{
+                    $('.wrap3').animate({top:0},'slow')
+                    return
+                }
 
+            }
+        })
+
+    }
 </script>
 </body>
 </html>
