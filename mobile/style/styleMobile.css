@@ -14,10 +14,15 @@ h2{
 h4{
     font-size: 1.8rem !important;
 }
+button{
+    color: #fff !important;
+    background-color: #5bc0de !important;
+}
 /*wrap1 style*/
 .wrap1{
     width: 100%;
     background-color: #22c3aa;
+    position: absolute;
 }
 .wrap1_head{
     width: 10rem;
@@ -45,10 +50,10 @@ border-radius: 5rem;
 .wrap1_3 {
     position: absolute;
     left: 50%;
-    margin-left: -15rem;
+    margin-left: -13rem;
     top: 25rem;
     font-size: 2rem;
-    width: 30rem;
+    width: 26rem;
     text-align: center;
     color: #008a75;
     /*color: white;*/

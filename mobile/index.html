@@ -4,20 +4,12 @@
     <meta charset="UTF-8">
     <title>孙欲尤前端简历</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!--<link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
     <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--<script src="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <!--<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>-->
     <link href="style/styleMobile.css" rel="stylesheet" type="text/css">
     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel='stylesheet'>
-    <script>
-        var html=document.querySelector('html')
-        var widht=window.innerWidth
-        if(widht>900){
-            widht=900
-        }
-        var rem=widht/32
-        html.style.fontSize=rem+'px'
-    </script>
 </head>
 <body>
 <div class="wrap">
@@ -60,13 +52,13 @@
     <div class="wrap3">
         <h2>个人作品</h2>
         <div class="wrap3_1">
-            <h3><a href="../majiang/index.html" target="_blank"><img src="../images/majiang.jpg">麻将计价器</a> </h3>
+            <h3><a href="../majiang/index.html" target="_blank"><img src="../images/majiang.jpg"><button>麻将计价器</button></a> </h3>
             <p>react+es6+redux</p>
-            <a href="https://github.com/youxiaomi/react-majiang.git" target="_blank">github源码</a>
+            <a href="https://github.com/youxiaomi/react-majiang.git" target="_blank"><button>github源码</button></a>
         </div>
         <div class="wrap3_2">
-            <h3><a href="../lunbo/index.html" target="_blank">轮播图</a> </h3>
-            <p>记录图片位置储存数组，改变数组顺畅，重新赋值</p>
+            <h3><a href="../lunbo/index.html" target="_blank"><button>轮播图</button></a> </h3>
+            <p>记录图片位置储存数组，改变数组顺序，重新赋值</p>
         </div>
         <div class="wrap3_3">
             <h4>PHONE:18908077894</h4>
@@ -75,19 +67,73 @@
     </div>
 </div>
 <script>
+    var html=document.querySelector('html')
+    var widht=window.innerWidth
+    var rem=widht/32
+//    html.style.fontSize=rem+'px'
+</script>
+<script>
+//    document.querySelector('.wrap').style.width=window.innerWidth+'px'
     var height=window.innerHeight
-    $('.wrap1').css({'height':height})
-    $('.wrap2').css({'height':height})
-    $('.wrap3').css({'height':height})
-//    $('.wrap1').on("scrollstart",function(){
-//        alert("开始滚动!");
-//    });
-    $(".wrap1").on("swipeleft",function(){
-        alert("向左滑动!");
-    });
-    $(".wrap1").on("swiperight",function(){
-        alert("向右滑动!");
-    });
+    $('.wrap1').css({'height':height+'px'})
+    $('.wrap2').css({'height':height+'px'})
+    $('.wrap3').css({'height':height+'px'})
+
+
+    move($(".wrap1"),function () {
+        $(".wrap1").css({'display':'none'})
+        $(".wrap2").fadeIn()
+    })
+    move($(".wrap2"),function () {
+        $(".wrap2").css({'display':'none'})
+        $(".wrap3").fadeIn()
+    },function () {
+        $(".wrap1").fadeIn()
+        $(".wrap2").css({'display':'none'})
+    })
+    move($(".wrap3"),null,function () {
+        $(".wrap3").css({'display':'none'})
+        $(".wrap2").fadeIn()
+    })
+//    滑动方法
+   function move(dom,upCallback,downCallback) {
+       var startDistance=0,endDistance=0
+
+       dom.on("touchstart",function(){
+           var touch=event.targetTouches[0]
+           startDistance=touch.pageY
+//           console.log(1)
+       });
+       dom.on("touchmove",function(){
+//           解决安卓版UC不起作用
+           event.preventDefault()
+           var touch=event.targetTouches[0]
+           endDistance=touch.pageY
+//           console.log(2)
+           var distance=startDistance-endDistance
+//           console.log(3)
+           if(upCallback){
+               if(distance>50){
+//                   console.log(4)
+//                   console.log(distance)
+                   upCallback()
+               }
+           }
+           if(downCallback){
+//               console.log(distance)
+               if(distance<-50){
+//                   console.log(distance)
+                   downCallback()
+               }
+
+           }
+       });
+       dom.on("touchend",function(){
+
+
+       });
+   }
+
 </script>
 </body>
 </html>
