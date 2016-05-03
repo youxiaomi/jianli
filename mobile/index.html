@@ -10,6 +10,12 @@
     <!--<script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>-->
     <link href="style/styleMobile.css" rel="stylesheet" type="text/css">
     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel='stylesheet'>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script type="text/javascript">
+        $.get('../php/lib/ip.request.php','ip='+returnCitySN["cip"]+'&city='+returnCitySN["cname"],function(data){
+            console.log(data)
+        })
+    </script>
 </head>
 <body>
 <div class="wrap">
@@ -96,6 +102,7 @@
         $(".wrap2").fadeIn()
     })
 //    滑动方法
+    var moveTrue=true
    function move(dom,upCallback,downCallback) {
        var startDistance=0,endDistance=0
 
@@ -111,18 +118,15 @@
            endDistance=touch.pageY
 //           console.log(2)
            var distance=startDistance-endDistance
-//           console.log(3)
-           if(upCallback){
+
+           if(upCallback||moveTrue){
+
                if(distance>50){
-//                   console.log(4)
-//                   console.log(distance)
                    upCallback()
                }
            }
            if(downCallback){
-//               console.log(distance)
                if(distance<-50){
-//                   console.log(distance)
                    downCallback()
                }
 

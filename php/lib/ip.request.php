@@ -14,15 +14,19 @@ $ip=$_GET['ip'];
 //$result=fetchOne('testIp','ip',$ip);
 $result=fetchAll('testIp');
 $count=0;
-if($result){
-    foreach ($result as $value)
+//echo print_r($result);
+for($x=0;$x<count($result);$x++)
+{
+    foreach ($result[$x] as $key=>$val)
     {
-        if($value=$ip){
-            $count=$count+1;
+        if($key=='ip'){
+            if($val==$ip){
+                $count=$count+1;
+            }
         }
     }
 }
-//echo $count;
+echo $count;
 if($count>0){
     insert('testIp',array('city'=>$city,'ip'=>$ip,'count'=>$count+1,'time'=>date('Y-m-d-G-i-s',time())));
 }else{
