@@ -242,6 +242,7 @@
         height=650
     }
     $('.wrap').css({'height':height-146})
+//    wrap1出现
     $('.wrap1_head').fadeIn('slow')
     $('.wrap1_2_x').fadeIn('slow',function () {
         $('.wrap1_2_you').addClass('animateName')
@@ -255,7 +256,7 @@
             })
         },1500)
     })
-
+//wrap1 3D旋转
     var wrap1=document.querySelector('.wrap1')
     function wrapAnimate() {
     var set=setInterval(function () {
@@ -273,6 +274,7 @@
         }
     },10)
 }
+//    wrap1和wrap2的skew画面
 function skew(name,b) {
     var i=0
     var setSkew=setInterval(function () {
@@ -288,9 +290,7 @@ function skew(name,b) {
         }
     },20)
 }
-</script>
-<script>
-//    wrap2Fun()
+//    wrap2出现
     function wrap2Fun() {
         $('.wrap2').fadeIn('slow',function () {
             $('.wrap2_1').fadeIn('slow',function () {
@@ -300,6 +300,7 @@ function skew(name,b) {
             })
         })
     }
+//wrap2移动
     function wrap2Move() {
         $('.wrap2').addClass('wrap2animate')
         $('.wrap2').animate({left:'800px'},1000)
@@ -308,6 +309,7 @@ function skew(name,b) {
             skew(wrap2,1)
         },1000)
     }
+//wrap3出现
     function wrap3Fun() {
         $('.wrap3').animate({top:height-$('.wrap3').get(0).offsetHeight},'fast')
         $('.wrap3').animate({top:0},'fast',function () {
@@ -323,7 +325,6 @@ function skew(name,b) {
                     $('.wrap3').animate({top:0},'slow')
                     return
                 }
-
             }
         })
 
