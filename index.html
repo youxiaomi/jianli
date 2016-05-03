@@ -6,6 +6,12 @@
     <script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script><script type="text/javascript">uaredirect("mobile/index.html");</script>
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel='stylesheet'>
+    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script type="text/javascript">
+        $.get('php/lib/ip.request.php','ip='+returnCitySN["cip"]+'&city='+returnCitySN["cname"],function(data){
+            console.log(data)
+        })
+    </script>
     <style>
         *{
             padding: 0;
@@ -306,11 +312,9 @@ function skew(name,b) {
         $('.wrap3').animate({top:height-$('.wrap3').get(0).offsetHeight},'fast')
         $('.wrap3').animate({top:0},'fast',function () {
             var distance=height-$('.wrap3').get(0).offsetHeight
-            console.log(distance)
             wrap3Move()
             function wrap3Move() {
                 distance=distance-40
-                console.log(distance)
                 if(distance>0){
                     $('.wrap3').animate({top:distance})
                     $('.wrap3').animate({top:0})

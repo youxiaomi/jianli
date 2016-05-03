@@ -1,0 +1,10 @@
+<?php 
+define("DB_HOST","localhost");
+//define("DB_HOST","qdm209729377.my3w.com");
+define("DB_USER","root");
+//define("DB_USER","qdm209729377");
+define("DB_PWD","root");
+//define("DB_PWD","fan13408013680");
+define("DB_DBNAME","you");
+//define("DB_DBNAME","qdm209729377_db");
+define("DB_CHARSET","utf8");
