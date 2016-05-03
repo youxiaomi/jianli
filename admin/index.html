@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <table class="table">
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    $.get('../php/lib/inf.request.php',function (data) {
+        data=JSON.parse(data)
+//        console.log(data)
+//        if(data[0].ip==data[4].ip){
+//            console.log(1)
+//        }else{
+//            console.log(2)
+//
+//        }
+        dataFun(data)
+    })
+    function dataFun(data) {
+        var classData={}
+        for(var i=0;i<data.length;i++){
+                if(isEmptyObject(classData)){
+                    classData[data[i].ip]=[]
+                    classData[data[i].ip].push(data[i])
+                }else {
+                    var dataTrue=false
+                    for(var m in classData){
+                        if(data[i].ip==m){
+                            var dataTrue=true
+                        }
+                    }
+                    if(dataTrue){
+                        classData[data[i].ip].push(data[i])
+                    }else {
+                        classData[data[i].ip]=[]
+                        classData[data[i].ip].push(data[i])
+                    }
+                }
+        }
+        console.log(classData)
+        for(var k in classData){
+            $('.table tbody').append("<tr><td>"+classData[k][0].ip+"</td></tr>")
+            for(var q=0;q<classData[k].length;q++){
+                $('.table tbody').append("</tr><tr><td>"+classData[k][q].count+"</td><td>"+classData[k][q].city+"</td><td>"+classData[k][q].time+"</td></tr>")
+            }
+        }
+    }
+    function isEmptyObject(obj) {
+        for ( var name in obj ) {
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>

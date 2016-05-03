@@ -28,7 +28,9 @@ for($x=0;$x<count($result);$x++)
 }
 echo $count;
 if($count>0){
-    insert('testIp',array('city'=>$city,'ip'=>$ip,'count'=>$count+1,'time'=>date('Y-m-d-G-i-s',time())));
+    if($ip!=='182.150.147.162'){
+        insert('testIp',array('city'=>$city,'ip'=>$ip,'count'=>$count+1,'time'=>date('Y-m-d-G-i-s',time())));
+    }
 }else{
     insert('testIp',array('city'=>$city,'ip'=>$ip,'count'=>1,'time'=>date('Y-m-d-G-i-s',time())));
 }
