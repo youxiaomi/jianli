@@ -206,9 +206,9 @@
                 <h2>工作经历</h2>
                 <h4>乐途汽车管家</h4>
                 <h4>2015.10-2016.3</h4>
-                <p>1、HTML,CSS3制作网站页面</p>
+                <p>1、HTML,CSS制作网站页面</p>
                 <p>2、javaScript完成数据逻辑交互</p>
-                <p>3、用PHP开发简单后台系统</p>
+                <p>3、自学PHP开发简单后台系统</p>
             </div>
             <div class="wrap2_2" style="display: none">
                 <h2>技能</h2>
@@ -269,7 +269,8 @@
         var rot=parseInt(deg)+2
         wrap1.style.transform='rotateY('+rot+'deg)'
         wrap1.style.left=wrap1.offsetLeft-2.222 +'px'
-        if(rot==360){
+        console.log(rot)
+        if(rot==360||rot>360){
             clearInterval(set)
             wrap1.style.left=0+'px'
             skew(wrap1,-1)
